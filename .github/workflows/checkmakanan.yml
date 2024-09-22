@@ -1,0 +1,21 @@
+name: Echo on Pull Request
+
+# Memicu workflow pada pull request ke branch 'main'
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  echo_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Echo Check Makanan
+        run: echo "Oh ini benar bukan makanan"
+
+      - name: Echo Check Dessert
+        run: echo "Oh ini benar bukan dessert"
