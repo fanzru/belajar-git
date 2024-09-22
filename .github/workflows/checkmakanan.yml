@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  echo_job:
+  job1:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,3 +19,12 @@ jobs:
 
       - name: Echo Check Dessert
         run: echo "Oh ini benar bukan dessert"
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Echo Check Valid tidak ada barang berbahaya
+        run: echo "Oh ini benar tidak ada yang bahaya"
